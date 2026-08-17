@@ -16,11 +16,13 @@ As a result, 3 files are created: cars_features_1, cars_features_2, cars_feature
 
 Next stage was data preprocessing.py, where data were prepared for model training. The only ordinal category is 'condition'.
 
-Next stage was model_evaluation.py, where we used a "for loop" to evaluate 12 combinations: dataset cars_clean_1 with 4 algorithms, cars_clean_2 with 4 algorithms and cars_clean_3 with 4 algorithms. Nine of them are uploaded to GitHub, but 'random forest' models are too big for uploading.
+Next stage was model_training.py, where we used a "for loop" to create and train 12 combinations: dataset cars_clean_1 with 4 algorithms, cars_clean_2 with 4 algorithms and cars_clean_3 with 4 algorithms. Nine of them are uploaded to GitHub, but 'random forest' models are too big for uploading.
+
+In the file model_evaluation.py we show evaluation metrics for all 12 combinations.
 
 Final stage is Colab notebook 'model_comparison.ipynb'. Using diagrams, we may observe that the optimal combination of dataset and algorithm is dataset_3 + random forest.
 
-This trained model may not be found on GiHub as joblib file, since it is too big. To create the model with the best performance, one should follow the path:
+This best trained model may not be found on GiHub as joblib file, since it is too big. To create the model with the best performance, one should follow the path:
 cars.csv - data_cleaning.py - cars_clean_1.csv - feature_engineering.py - cars_features_3.csv - preprocessing.py - optimal_model_training_evaluation.py
 
 Since we now know which model is the best, we created a new python file (optimal_model_training_evaluation.py), specifically for creating and evaluating the optimal model. This file demands significantly lower time than the model_training.py file, that trains 12 combinations.
